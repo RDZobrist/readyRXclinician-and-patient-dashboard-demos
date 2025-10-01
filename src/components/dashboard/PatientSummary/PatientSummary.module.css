@@ -1,0 +1,230 @@
+/**
+ * PatientSummary Component Styles
+ * Key health metrics cards for healthcare dashboard
+ */
+
+.patientSummary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg, 16px);
+  margin-bottom: var(--spacing-xl, 24px);
+}
+
+.summaryCard {
+  background: var(--color-background-primary, #ffffff);
+  border: 1px solid var(--color-border-light, #e5e7eb);
+  border-radius: var(--border-radius-lg, 8px);
+  padding: var(--spacing-lg, 16px);
+  box-shadow: var(--shadow-sm, 0 1px 2px 0 rgb(0 0 0 / 0.05));
+  transition: all 0.2s ease-in-out;
+}
+
+.summaryCard:hover {
+  box-shadow: var(--shadow-md, 0 4px 6px -1px rgb(0 0 0 / 0.1));
+  transform: translateY(-1px);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-md, 12px);
+}
+
+.cardTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm, 8px);
+  font-size: var(--font-size-sm, 14px);
+  font-weight: var(--font-weight-medium, 500);
+  color: var(--color-text-secondary, #6b7280);
+  margin: 0;
+}
+
+.cardIcon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.statusIndicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.statusIndicator.normal {
+  background: var(--color-success, #059669);
+}
+
+.statusIndicator.elevated {
+  background: var(--color-warning, #d97706);
+}
+
+.statusIndicator.high {
+  background: var(--color-critical, #dc2626);
+}
+
+.statusIndicator.low {
+  background: var(--color-info, #2563eb);
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs, 4px);
+}
+
+.primaryValue {
+  font-size: var(--font-size-2xl, 24px);
+  font-weight: var(--font-weight-bold, 700);
+  color: var(--color-text-primary, #111827);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.primaryValue.normal {
+  color: var(--color-success-dark, #166534);
+}
+
+.primaryValue.elevated {
+  color: var(--color-warning-dark, #92400e);
+}
+
+.primaryValue.high {
+  color: var(--color-critical-dark, #991b1b);
+}
+
+.primaryValue.low {
+  color: var(--color-info-dark, #1e40af);
+}
+
+.valueUnit {
+  font-size: var(--font-size-sm, 14px);
+  font-weight: var(--font-weight-normal, 400);
+  color: var(--color-text-secondary, #6b7280);
+  margin-left: var(--spacing-xs, 4px);
+}
+
+.secondaryInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm, 8px);
+  font-size: var(--font-size-xs, 12px);
+  color: var(--color-text-secondary, #6b7280);
+  margin-top: var(--spacing-xs, 4px);
+}
+
+.trendIndicator {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs, 4px);
+  font-size: var(--font-size-xs, 12px);
+  font-weight: var(--font-weight-medium, 500);
+}
+
+.trendIndicator.increasing {
+  color: var(--color-critical, #dc2626);
+}
+
+.trendIndicator.decreasing {
+  color: var(--color-success, #059669);
+}
+
+.trendIndicator.stable {
+  color: var(--color-text-secondary, #6b7280);
+}
+
+.trendIcon {
+  width: 12px;
+  height: 12px;
+}
+
+.referenceRange {
+  font-size: var(--font-size-xs, 12px);
+  color: var(--color-text-tertiary, #9ca3af);
+}
+
+.lastUpdated {
+  font-size: var(--font-size-xs, 12px);
+  color: var(--color-text-tertiary, #9ca3af);
+}
+
+/* View-specific styling */
+.patientView .summaryCard {
+  background: var(--color-success-lightest, #f0fdf4);
+  border-color: var(--color-success-lighter, #bbf7d0);
+}
+
+.patientView .cardTitle {
+  color: var(--color-success-dark, #166534);
+}
+
+.clinicianView .summaryCard {
+  /* Default styling */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .patientSummary {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md, 12px);
+  }
+
+  .summaryCard {
+    padding: var(--spacing-md, 12px);
+  }
+
+  .primaryValue {
+    font-size: var(--font-size-xl, 20px);
+  }
+
+  .cardHeader {
+    margin-bottom: var(--spacing-sm, 8px);
+  }
+}
+
+@media (max-width: 480px) {
+  .cardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xs, 4px);
+  }
+
+  .secondaryInfo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xs, 4px);
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .summaryCard {
+    border-width: 2px;
+  }
+
+  .statusIndicator {
+    border: 2px solid var(--color-text-primary, #111827);
+  }
+}
+
+/* Print styles */
+@media print {
+  .patientSummary {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md, 12px);
+  }
+
+  .summaryCard {
+    box-shadow: none;
+    border: 1px solid #000;
+    break-inside: avoid;
+  }
+
+  .summaryCard:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}

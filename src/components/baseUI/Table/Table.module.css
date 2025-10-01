@@ -1,0 +1,251 @@
+/**
+ * Table Component Styles - Healthcare Dashboard
+ * Responsive, accessible, and sortable data table
+ */
+
+.tableContainer {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--color-gray-200);
+  border-radius: 0.5rem;
+  background-color: var(--color-white);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.caption {
+  padding: 1rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-gray-800);
+  text-align: left;
+  caption-side: top;
+}
+
+/* Table Header */
+.thead {
+  background-color: var(--color-gray-50);
+}
+
+.th {
+  padding: 0.75rem 1rem;
+  font-weight: 500;
+  color: var(--color-gray-600);
+  text-align: left;
+  border-bottom: 2px solid var(--color-gray-200);
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.th.sortable {
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease;
+}
+
+.th.sortable:hover {
+  background-color: var(--color-gray-100);
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sortIcon {
+  color: var(--color-gray-500);
+  display: flex;
+  align-items: center;
+}
+
+.inactiveIcon {
+  opacity: 0.3;
+}
+
+/* Table Body */
+.tbody .tr {
+  border-bottom: 1px solid var(--color-gray-200);
+  transition: background-color 0.2s ease;
+}
+
+.tbody .tr:last-child {
+  border-bottom: none;
+}
+
+.tbody .tr:hover {
+  background-color: var(--color-primary-50);
+}
+
+.td {
+  padding: 0.75rem 1rem;
+  color: var(--color-gray-700);
+  vertical-align: middle;
+}
+
+/* Table States */
+.loadingRow,
+.errorRow,
+.emptyRow {
+  text-align: center;
+}
+
+.loadingRow td,
+.errorRow td,
+.emptyRow td {
+  padding: 2rem;
+  color: var(--color-gray-500);
+}
+
+.errorRow td {
+  color: var(--color-red-600);
+  font-weight: 500;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  .tableContainer {
+    border-color: var(--color-gray-700);
+    background-color: var(--color-gray-800);
+  }
+
+  .caption {
+    color: var(--color-gray-100);
+  }
+
+  .thead {
+    background-color: var(--color-gray-750);
+  }
+
+  .th {
+    color: var(--color-gray-300);
+    border-bottom-color: var(--color-gray-600);
+  }
+
+  .th.sortable:hover {
+    background-color: var(--color-gray-700);
+  }
+
+  .sortIcon {
+    color: var(--color-gray-400);
+  }
+
+  .tbody .tr {
+    border-bottom-color: var(--color-gray-700);
+  }
+
+  .tbody .tr:hover {
+    background-color: var(--color-primary-900);
+  }
+
+  .td {
+    color: var(--color-gray-200);
+  }
+
+  .loadingRow td,
+  .errorRow td,
+  .emptyRow td {
+    color: var(--color-gray-400);
+  }
+
+  .errorRow td {
+    color: var(--color-red-400);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .table {
+    display: block;
+  }
+
+  .thead {
+    display: none; /* Hide traditional header on mobile */
+  }
+
+  .tr {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid var(--color-gray-200);
+    border-radius: 0.375rem;
+    padding: 0.5rem;
+  }
+
+  .tbody .tr {
+    border-bottom: 1px solid var(--color-gray-200);
+  }
+
+  .td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--color-gray-100);
+  }
+
+  .td:last-child {
+    border-bottom: none;
+  }
+
+  .td::before {
+    content: attr(data-label);
+    font-weight: 500;
+    color: var(--color-gray-600);
+    margin-right: 1rem;
+  }
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  /* Table skeleton loading styles */
+.skeletonRow {
+  border-bottom: 1px solid var(--color-gray-100);
+}
+
+.skeletonCell {
+  padding: 0.75rem 1rem;
+}
+
+.skeletonLine {
+  height: 1rem;
+  background: linear-gradient(90deg, var(--color-gray-200) 25%, var(--color-gray-100) 50%, var(--color-gray-200) 75%);
+  background-size: 200% 100%;
+  border-radius: 0.25rem;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+  @media (prefers-color-scheme: dark) {
+    .tr {
+      border-color: var(--color-gray-700);
+    }
+
+    .tbody .tr {
+      border-bottom-color: var(--color-gray-700);
+    }
+
+    .td {
+      border-bottom-color: var(--color-gray-700);
+    }
+
+    .td::before {
+      color: var(--color-gray-300);
+    }
+  }
+}

@@ -1,0 +1,1 @@
+export { LabResultCard, type LabResult, type LabResultCardProps } from './LabResultCard';

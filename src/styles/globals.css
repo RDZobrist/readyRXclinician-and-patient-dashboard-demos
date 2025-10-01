@@ -1,0 +1,60 @@
+/* Ready RX Healthcare Dashboard - Main Styles Entry Point */
+
+/* Import Design Tokens */
+@import './tokens/index.css';
+
+/* Import Responsive System */
+@import './responsive/breakpoints.css';
+
+/* Import Global Styles */
+@import './globals.css';
+
+/* CSS Modules Configuration */
+/* Note: CSS Modules are automatically handled by Vite for .module.css files */
+/* This file provides global design tokens and base styles */
+
+/* Root Element Configuration */
+html {
+  /* Enable smooth scrolling for accessibility */
+  scroll-behavior: smooth;
+  
+  /* Set base font size for rem calculations */
+  font-size: 16px;
+  
+  /* Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  :root {
+    --color-border: var(--color-gray-800);
+    --color-text-secondary: var(--color-gray-800);
+  }
+}
+
+/* Print Optimization */
+@media print {
+  /* Ensure proper print colors */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  /* Hide interactive elements */
+  button,
+  input,
+  select,
+  textarea {
+    display: none !important;
+  }
+}

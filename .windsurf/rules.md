@@ -1,0 +1,13 @@
+# Coding Guidelines 
+- My project's programming language is React and Javascript
+- Use early returns when possible
+- Use TypeScript when possible
+- Use Recharts for charts
+- Use date-fns for date manipulation
+- Use @heroicons/react for icons
+- Use clsx for conditional CSS classes
+- Use use-local-storage-state for theme persistence
+- Always add documentation when creating new functions and classes and this will be used for new developers to understand the code and place all documentation in src/docs/docs.md
+- Check DEVELOPMENT_GUIDE.md for more information
+- Check all of your memories before you begin every task 
+- Use official documentation for any library dependencies

@@ -1,0 +1,224 @@
+/**
+ * DashboardLayout Component Styles
+ * Healthcare-focused layout with responsive design
+ */
+
+.dashboardLayout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-background, #f9fafb);
+}
+
+/* Dashboard Header */
+.dashboardHeader {
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border, #e5e7eb);
+  box-shadow: var(--shadow-sm, 0 1px 2px 0 rgba(0, 0, 0, 0.05));
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.headerContent {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--spacing-lg, 1.5rem) var(--spacing-md, 1rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-lg, 1.5rem);
+}
+
+.titleSection {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-size: var(--font-size-2xl, 1.5rem);
+  font-weight: var(--font-weight-bold, 700);
+  color: var(--color-text-primary, #111827);
+  margin: 0 0 var(--spacing-xs, 0.25rem) 0;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: var(--font-size-base, 1rem);
+  color: var(--color-text-secondary, #6b7280);
+  margin: 0 0 var(--spacing-sm, 0.5rem) 0;
+  font-weight: var(--font-weight-medium, 500);
+}
+
+.patientInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs, 0.25rem);
+  flex-wrap: wrap;
+  margin-top: var(--spacing-xs, 0.25rem);
+}
+
+.patientLabel {
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--color-text-secondary, #6b7280);
+  font-weight: var(--font-weight-medium, 500);
+}
+
+.patientName {
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--color-clinician, #2563eb);
+  font-weight: var(--font-weight-semibold, 600);
+}
+
+.patientDetails {
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--color-text-tertiary, #9ca3af);
+  font-weight: var(--font-weight-normal, 400);
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm, 0.5rem);
+  flex-shrink: 0;
+}
+
+/* Content Area */
+.contentWrapper {
+  flex: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--spacing-lg, 1.5rem) var(--spacing-md, 1rem);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg, 1.5rem);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .headerContent {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--spacing-md, 1rem);
+    padding: var(--spacing-md, 1rem);
+  }
+  
+  .title {
+    font-size: var(--font-size-xl, 1.25rem);
+  }
+  
+  .subtitle {
+    font-size: var(--font-size-sm, 0.875rem);
+  }
+  
+  .patientInfo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xs, 0.25rem);
+  }
+  
+  .headerActions {
+    justify-content: flex-end;
+  }
+  
+  .contentWrapper {
+    padding: var(--spacing-md, 1rem);
+    gap: var(--spacing-md, 1rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .headerContent {
+    padding: var(--spacing-sm, 0.75rem);
+  }
+  
+  .title {
+    font-size: var(--font-size-lg, 1.125rem);
+  }
+  
+  .patientInfo {
+    font-size: var(--font-size-xs, 0.75rem);
+  }
+  
+  .patientName,
+  .patientLabel,
+  .patientDetails {
+    font-size: var(--font-size-xs, 0.75rem);
+  }
+  
+  .contentWrapper {
+    padding: var(--spacing-sm, 0.75rem);
+  }
+}
+
+/* Healthcare Context Styling */
+.patientName {
+  position: relative;
+}
+
+.patientName::before {
+  content: '👤';
+  margin-right: var(--spacing-xs, 0.25rem);
+  font-size: 0.8em;
+}
+
+/* Dark Theme Support */
+@media (prefers-color-scheme: dark) {
+  .dashboardLayout {
+    background: var(--color-background-dark, #111827);
+  }
+  
+  .dashboardHeader {
+    background: var(--color-surface-dark, #1f2937);
+    border-bottom-color: var(--color-border-dark, #374151);
+  }
+  
+  .title {
+    color: var(--color-text-primary-dark, #f9fafb);
+  }
+  
+  .subtitle {
+    color: var(--color-text-secondary-dark, #d1d5db);
+  }
+  
+  .patientLabel {
+    color: var(--color-text-secondary-dark, #d1d5db);
+  }
+  
+  .patientName {
+    color: var(--color-clinician-dark, #60a5fa);
+  }
+  
+  .patientDetails {
+    color: var(--color-text-tertiary-dark, #9ca3af);
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .dashboardHeader {
+    border-bottom-width: 2px;
+  }
+  
+  .title {
+    font-weight: var(--font-weight-black, 900);
+  }
+}
+
+/* Print Styles */
+@media print {
+  .dashboardHeader {
+    position: static;
+    box-shadow: none;
+    border-bottom: 2px solid #000;
+  }
+  
+  .headerActions {
+    display: none;
+  }
+  
+  .contentWrapper {
+    padding: 0;
+  }
+}

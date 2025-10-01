@@ -1,0 +1,262 @@
+/* Container Styles */
+.labResultsTableContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md, 1rem);
+  padding: var(--spacing-md, 1rem);
+  background: var(--color-white);
+  border-radius: var(--border-radius-lg, 8px);
+  box-shadow: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.1));
+}
+.tableContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md, 1rem);
+  padding: var(--spacing-md, 1rem);
+}
+.tableHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-md, 1rem);
+  padding-bottom: var(--spacing-md, 1rem);
+  border-bottom: 1px solid var(--color-border, #e5e7eb);
+}
+
+.mobileContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md, 1rem);
+  padding: var(--spacing-sm, 0.5rem);
+}
+/* Date Selector Styles */
+.dateSelector {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm, 8px);
+    margin-bottom: var(--spacing-md, 12px);
+  }
+  
+  .dateSelector .selectorLabel {
+    font-size: var(--font-size-sm, 14px);
+    font-weight: var(--font-weight-medium, 500);
+    color: var(--color-text-secondary, #6b7280);
+    white-space: nowrap;
+  }
+  
+  .dateSelect {
+    padding: var(--spacing-xs, 6px) var(--spacing-sm, 8px);
+    border: 1px solid var(--color-border-light, #d1d5db);
+    border-radius: var(--border-radius-md, 6px);
+    background: var(--color-background-primary, #ffffff);
+    font-size: var(--font-size-sm, 14px);
+    color: var(--color-text-primary, #111827);
+    min-width: 140px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .dateSelect:hover {
+    border-color: var(--color-border-medium, #9ca3af);
+  }
+  
+  .dateSelect:focus {
+    outline: none;
+    border-color: var(--color-primary, #3b82f6);
+    box-shadow: 0 0 0 3px var(--color-primary-light, #dbeafe);
+  }
+  
+  /* Desktop Layout - Date selector in header */
+  .tableHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-lg, 16px);
+    gap: var(--spacing-lg, 16px);
+  }
+  
+  .tableHeader .dateSelector {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+  
+  /* Mobile Layout - Date selector above content */
+  .mobileContainer .dateSelector {
+    background: var(--color-background-secondary, #f9fafb);
+    padding: var(--spacing-md, 12px);
+    border-radius: var(--border-radius-lg, 8px);
+    border: 1px solid var(--color-border-lighter, #f3f4f6);
+  }
+
+
+
+/* Table Header */
+.tableHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-md, 1rem);
+  padding-bottom: var(--spacing-md, 1rem);
+  border-bottom: 1px solid var(--color-border, #e5e7eb);
+}
+
+.patientInfo h2 {
+  margin: 0 0 var(--spacing-xs, 0.25rem) 0;
+  font-size: var(--font-size-xl, 1.25rem);
+  font-weight: var(--font-weight-semibold, 600);
+  color: var(--color-text-primary, #111827);
+}
+
+.patientDetails {
+  margin: 0;
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--color-text-secondary, #6b7280);
+  font-weight: var(--font-weight-medium, 500);
+}
+
+/* Patient Selector */
+.patientSelector {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm, 0.5rem);
+  flex-shrink: 0;
+}
+
+.selectorLabel {
+  font-size: var(--font-size-sm, 0.875rem);
+  font-weight: var(--font-weight-medium, 500);
+  color: var(--color-text-primary, #111827);
+  white-space: nowrap;
+}
+
+.patientSelect {
+  min-width: 200px;
+  padding: var(--spacing-xs, 0.25rem) var(--spacing-sm, 0.5rem);
+  font-size: var(--font-size-sm, 0.875rem);
+  border: 1px solid var(--color-border, #d1d5db);
+  border-radius: var(--border-radius-md, 6px);
+  background: var(--color-white);
+  color: var(--color-text-primary, #111827);
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.patientSelect:hover {
+  border-color: var(--color-clinician, #3b82f6);
+}
+
+.patientSelect:focus {
+  outline: none;
+  border-color: var(--color-clinician, #3b82f6);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* No Results State */
+.noResults {
+  text-align: center;
+  padding: var(--spacing-xl, 2rem);
+  color: var(--color-text-secondary, #6b7280);
+  font-size: var(--font-size-base, 1rem);
+  background: var(--color-gray-50, #f9fafb);
+  border-radius: var(--border-radius-md, 6px);
+  border: 1px dashed var(--color-border, #d1d5db);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .tableHeader {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--spacing-sm, 0.5rem);
+  }
+  
+  .patientSelector {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--spacing-xs, 0.25rem);
+  }
+  
+  .selectorLabel {
+    font-size: var(--font-size-xs, 0.75rem);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .patientSelect {
+    min-width: unset;
+    width: 100%;
+    padding: var(--spacing-sm, 0.5rem);
+    font-size: var(--font-size-base, 1rem);
+  }
+  
+  .patientDetails {
+    font-size: var(--font-size-xs, 0.75rem);
+  }
+}
+
+/* Touch Targets for Mobile */
+@media (max-width: 768px) {
+  .patientSelect {
+    min-height: 44px; /* Minimum touch target size */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 1rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Healthcare Status Colors */
+.patientSelect option {
+  padding: var(--spacing-xs, 0.25rem);
+}
+
+/* Focus and Accessibility */
+.patientSelect:focus-visible {
+  outline: 2px solid var(--color-clinician, #3b82f6);
+  outline-offset: 2px;
+}
+
+/* Loading State (for future enhancement) */
+.patientSelect:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: var(--color-gray-100, #f3f4f6);
+}
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .tableHeader {
+      flex-direction: column;
+      align-items: stretch;
+      gap: var(--spacing-md, 12px);
+    }
+    
+    .tableHeader .dateSelector {
+      align-self: flex-end;
+    }
+    
+    .dateSelect {
+      min-width: 120px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .tableHeader .dateSelector {
+      align-self: stretch;
+    }
+    
+    .dateSelector {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--spacing-xs, 4px);
+    }
+    
+    .dateSelect {
+      width: 100%;
+      min-width: auto;
+    }
+  }

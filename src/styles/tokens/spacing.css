@@ -1,0 +1,94 @@
+:root {
+  /* Base Spacing Scale */
+  --space-0: 0;
+  --space-px: 1px;
+  --space-0-5: 0.125rem;    /* 2px */
+  --space-1: 0.25rem;       /* 4px */
+  --space-1-5: 0.375rem;    /* 6px */
+  --space-2: 0.5rem;        /* 8px */
+  --space-2-5: 0.625rem;    /* 10px */
+  --space-3: 0.75rem;       /* 12px */
+  --space-3-5: 0.875rem;    /* 14px */
+  --space-4: 1rem;          /* 16px */
+  --space-5: 1.25rem;       /* 20px */
+  --space-6: 1.5rem;        /* 24px */
+  --space-7: 1.75rem;       /* 28px */
+  --space-8: 2rem;          /* 32px */
+  --space-9: 2.25rem;       /* 36px */
+  --space-10: 2.5rem;       /* 40px */
+  --space-11: 2.75rem;      /* 44px */
+  --space-12: 3rem;         /* 48px */
+  --space-14: 3.5rem;       /* 56px */
+  --space-16: 4rem;         /* 64px */
+  --space-20: 5rem;         /* 80px */
+  --space-24: 6rem;         /* 96px */
+  --space-28: 7rem;         /* 112px */
+  --space-32: 8rem;         /* 128px */
+
+  /* Responsive Spacing with clamp() - Fluid between breakpoints */
+  --space-responsive-xs: clamp(0.25rem, 1vw, 0.5rem);      /* 4px-8px */
+  --space-responsive-sm: clamp(0.5rem, 2vw, 1rem);         /* 8px-16px */
+  --space-responsive-md: clamp(1rem, 3vw, 2rem);           /* 16px-32px */
+  --space-responsive-lg: clamp(1.5rem, 4vw, 3rem);         /* 24px-48px */
+  --space-responsive-xl: clamp(2rem, 5vw, 4rem);           /* 32px-64px */
+  --space-responsive-2xl: clamp(3rem, 6vw, 6rem);          /* 48px-96px */
+
+  /* Healthcare-Specific Spacing */
+  --space-touch-target: 2.75rem;           /* 44px - iOS/Android minimum */
+  --space-touch-target-large: 3rem;        /* 48px - Comfortable touch */
+  --space-medical-card-padding: var(--space-4);     /* 16px - Card content */
+  --space-medical-card-gap: var(--space-3);         /* 12px - Between cards */
+  --space-lab-result-spacing: var(--space-2);       /* 8px - Lab value spacing */
+  --space-critical-alert-padding: var(--space-6);   /* 24px - Critical alerts */
+
+  /* Layout Spacing */
+  --space-page-padding-mobile: var(--space-4);      /* 16px - Mobile page edges */
+  --space-page-padding-tablet: var(--space-6);      /* 24px - Tablet page edges */
+  --space-page-padding-desktop: var(--space-8);     /* 32px - Desktop page edges */
+  
+  --space-section-gap-mobile: var(--space-6);       /* 24px - Mobile sections */
+  --space-section-gap-tablet: var(--space-8);       /* 32px - Tablet sections */
+  --space-section-gap-desktop: var(--space-12);     /* 48px - Desktop sections */
+
+  /* Component Spacing */
+  --space-button-padding-x: var(--space-4);         /* 16px - Button horizontal */
+  --space-button-padding-y: var(--space-2-5);       /* 10px - Button vertical */
+  --space-button-padding-x-large: var(--space-6);   /* 24px - Large button horizontal */
+  --space-button-padding-y-large: var(--space-3-5); /* 14px - Large button vertical */
+  --space-button-padding-x-small: var(--space-3);   /* 12px - Small button horizontal */
+  --space-button-padding-y-small: var(--space-2);   /* 8px - Small button vertical */
+
+  --space-input-padding-x: var(--space-3);          /* 12px - Input horizontal */
+  --space-input-padding-y: var(--space-2-5);        /* 10px - Input vertical */
+  
+  --space-card-padding: var(--space-6);              /* 24px - Card internal padding */
+  --space-card-gap: var(--space-4);                  /* 16px - Gap between cards */
+  
+  --space-modal-padding: var(--space-6);             /* 24px - Modal content padding */
+  --space-modal-margin: var(--space-4);              /* 16px - Modal edge margin */
+
+  /* Navigation Spacing */
+  --space-sidebar-width: 16rem;                      /* 256px - Desktop sidebar */
+  --space-sidebar-padding: var(--space-4);           /* 16px - Sidebar internal */
+  --space-bottom-tabs-height: 5rem;                  /* 80px - Mobile bottom tabs */
+  --space-bottom-tabs-padding: var(--space-2);       /* 8px - Tab internal padding */
+  --space-bottom-tabs-safe-area: env(safe-area-inset-bottom); /* iPhone notch */
+
+  /* Content Spacing */
+  --space-content-max-width: 75rem;                  /* 1200px - Max content width */
+  --space-content-padding-bottom-mobile: calc(var(--space-bottom-tabs-height) + var(--space-4)); /* Mobile content bottom */
+  
+  /* Focus and Interactive States */
+  --space-focus-ring-width: 2px;                     /* Focus ring thickness */
+  --space-focus-ring-offset: 2px;                    /* Focus ring offset */
+  
+  /* Medical Data Spacing */
+  --space-lab-value-gap: var(--space-1);             /* 4px - Between value and unit */
+  --space-reference-range-margin: var(--space-2);    /* 8px - Reference range spacing */
+  --space-status-badge-margin: var(--space-1-5);     /* 6px - Status badge margin */
+  
+  /* Chart Spacing */
+  --space-chart-padding: var(--space-4);             /* 16px - Chart container padding */
+  --space-chart-margin: var(--space-6);              /* 24px - Chart margins */
+  --space-chart-legend-gap: var(--space-3);          /* 12px - Legend item spacing */
+}

@@ -1,0 +1,223 @@
+/**
+ * PatientHeader Component Styles
+ * Healthcare dashboard patient information display
+ */
+
+.patientHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-lg, 16px) var(--spacing-xl, 24px);
+  background: var(--color-background-primary, #ffffff);
+  border: 1px solid var(--color-border-light, #e5e7eb);
+  border-radius: var(--border-radius-lg, 8px);
+  margin-bottom: var(--spacing-lg, 16px);
+  box-shadow: var(--shadow-sm, 0 1px 2px 0 rgb(0 0 0 / 0.05));
+}
+
+.patientInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg, 16px);
+  flex: 1;
+}
+
+.patientAvatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--color-primary-light, #dbeafe);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-xl, 20px);
+  font-weight: var(--font-weight-semibold, 600);
+  color: var(--color-primary, #2563eb);
+  border: 2px solid var(--color-primary-lighter, #f0f9ff);
+  flex-shrink: 0;
+}
+
+.patientAvatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.patientDetails {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs, 4px);
+  min-width: 0;
+}
+
+.patientName {
+  font-size: var(--font-size-xl, 20px);
+  font-weight: var(--font-weight-semibold, 600);
+  color: var(--color-text-primary, #111827);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.patientMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md, 12px);
+  flex-wrap: wrap;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs, 4px);
+  font-size: var(--font-size-sm, 14px);
+  color: var(--color-text-secondary, #6b7280);
+}
+
+.metaIcon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.patientActions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md, 12px);
+}
+
+.alertsSection {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm, 8px);
+}
+
+.alertBadge {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs, 4px);
+  padding: var(--spacing-xs, 4px) var(--spacing-sm, 8px);
+  border-radius: var(--border-radius-md, 6px);
+  font-size: var(--font-size-xs, 12px);
+  font-weight: var(--font-weight-medium, 500);
+}
+
+.alertBadge.high {
+  background: var(--color-critical-light, #fef2f2);
+  color: var(--color-critical, #dc2626);
+  border: 1px solid var(--color-critical-lighter, #fecaca);
+}
+
+.alertBadge.medium {
+  background: var(--color-warning-light, #fffbeb);
+  color: var(--color-warning, #d97706);
+  border: 1px solid var(--color-warning-lighter, #fed7aa);
+}
+
+.alertBadge.low {
+  background: var(--color-info-light, #eff6ff);
+  color: var(--color-info, #2563eb);
+  border: 1px solid var(--color-info-lighter, #dbeafe);
+}
+
+.alertIcon {
+  width: 12px;
+  height: 12px;
+}
+
+/* View-specific styling */
+.patientView {
+  background: var(--color-success-lightest, #f0fdf4);
+  border-color: var(--color-success-lighter, #bbf7d0);
+}
+
+.patientView .patientName {
+  color: var(--color-success-dark, #166534);
+}
+
+.patientView .patientAvatar {
+  background: var(--color-success-light, #dcfce7);
+  color: var(--color-success, #059669);
+  border-color: var(--color-success-lighter, #bbf7d0);
+}
+
+.clinicianView {
+  /* Default styling already applied */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .patientHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-md, 12px);
+    padding: var(--spacing-md, 12px);
+  }
+
+  .patientInfo {
+    width: 100%;
+  }
+
+  .patientAvatar {
+    width: 48px;
+    height: 48px;
+    font-size: var(--font-size-lg, 18px);
+  }
+
+  .patientName {
+    font-size: var(--font-size-lg, 18px);
+  }
+
+  .patientMeta {
+    gap: var(--spacing-sm, 8px);
+  }
+
+  .metaItem {
+    font-size: var(--font-size-xs, 12px);
+  }
+
+  .patientActions {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 480px) {
+  .patientMeta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xs, 4px);
+  }
+
+  .alertsSection {
+    flex-wrap: wrap;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .patientHeader {
+    border-width: 2px;
+  }
+
+  .patientAvatar {
+    border-width: 3px;
+  }
+
+  .alertBadge {
+    border-width: 2px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .patientHeader {
+    box-shadow: none;
+    border: 1px solid #000;
+    background: #fff;
+  }
+
+  .patientActions {
+    display: none;
+  }
+}

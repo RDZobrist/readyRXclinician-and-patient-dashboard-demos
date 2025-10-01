@@ -1,0 +1,118 @@
+/**
+ * Ready RX Dashboard - Professional Layout Styles
+ * Enhanced visual hierarchy and responsive design
+ */
+
+/* Patient Information Section */
+.patient-info-section {
+  margin-bottom: var(--spacing-2xl, 32px);
+}
+
+/* Main Content Grid Layout */
+.main-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: var(--spacing-2xl, 32px);
+  align-items: start;
+}
+
+.lab-results-column {
+  min-width: 0; /* Prevents overflow issues */
+}
+
+.charts-column {
+  position: sticky;
+  top: var(--spacing-lg, 16px);
+}
+
+/* Enhanced PatientSummary Grid */
+.patient-info-section .patientSummary {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1000px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .main-content-grid {
+    grid-template-columns: 1fr 350px;
+    gap: var(--spacing-xl, 24px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .main-content-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl, 24px);
+  }
+
+  .charts-column {
+    position: static;
+  }
+
+  /* Stack summary cards in 2 columns on tablet */
+  .patient-info-section .patientSummary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .patient-info-section {
+    margin-bottom: var(--spacing-xl, 24px);
+  }
+
+  .main-content-grid {
+    gap: var(--spacing-lg, 16px);
+  }
+
+  /* Single column on mobile */
+  .patient-info-section .patientSummary {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Enhanced Visual Hierarchy */
+.patient-info-section {
+  background: var(--color-background-secondary, #f9fafb);
+  border-radius: var(--border-radius-xl, 12px);
+  padding: var(--spacing-xl, 24px);
+  margin: 0 calc(-1 * var(--spacing-xl, 24px)) var(--spacing-2xl, 32px);
+  border: 1px solid var(--color-border-lighter, #f3f4f6);
+}
+
+/* Professional Card Shadows */
+.lab-results-column > *,
+.charts-column > * {
+  box-shadow: var(--shadow-lg, 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.05));
+  border-radius: var(--border-radius-xl, 12px);
+  overflow: hidden;
+}
+
+/* Smooth Transitions */
+.main-content-grid > * {
+  transition: all 0.3s ease-in-out;
+}
+
+.main-content-grid > *:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl, 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.04));
+}
+
+/* Print Optimization */
+@media print {
+  .patient-info-section {
+    background: white;
+    border: 1px solid #000;
+    margin: 0 0 var(--spacing-lg, 16px);
+    padding: var(--spacing-lg, 16px);
+  }
+
+  .main-content-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg, 16px);
+  }
+
+  .main-content-grid > *:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,122 @@
+:root {
+  /* Font Families */
+  --font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  --font-family-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
+  --font-family-medical: var(--font-family-sans); /* Professional, readable sans-serif for medical data */
+
+  /* Font Weights */
+  --font-weight-thin: 100;
+  --font-weight-extralight: 200;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+
+  /* Base Font Sizes - Mobile First */
+  --font-size-xs: 0.75rem;      /* 12px */
+  --font-size-sm: 0.875rem;     /* 14px */
+  --font-size-base: 1rem;       /* 16px */
+  --font-size-lg: 1.125rem;     /* 18px */
+  --font-size-xl: 1.25rem;      /* 20px */
+  --font-size-2xl: 1.5rem;      /* 24px */
+  --font-size-3xl: 1.875rem;    /* 30px */
+  --font-size-4xl: 2.25rem;     /* 36px */
+  --font-size-5xl: 3rem;        /* 48px */
+  --font-size-6xl: 3.75rem;     /* 60px */
+
+  /* Responsive Typography with clamp() */
+  --font-size-responsive-xs: clamp(0.75rem, 2vw, 0.875rem);     /* 12px-14px */
+  --font-size-responsive-sm: clamp(0.875rem, 2.5vw, 1rem);      /* 14px-16px */
+  --font-size-responsive-base: clamp(1rem, 3vw, 1.125rem);      /* 16px-18px */
+  --font-size-responsive-lg: clamp(1.125rem, 3.5vw, 1.25rem);   /* 18px-20px */
+  --font-size-responsive-xl: clamp(1.25rem, 4vw, 1.5rem);       /* 20px-24px */
+  --font-size-responsive-2xl: clamp(1.5rem, 5vw, 2.25rem);      /* 24px-36px */
+  --font-size-responsive-3xl: clamp(1.875rem, 6vw, 3rem);       /* 30px-48px */
+
+  /* Line Heights */
+  --line-height-none: 1;
+  --line-height-tight: 1.25;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 2;
+
+  /* Healthcare-Specific Typography */
+  --font-size-medical-value: var(--font-size-responsive-lg);     /* Lab values - prominent */
+  --font-size-medical-unit: var(--font-size-responsive-sm);      /* Units - smaller */
+  --font-size-medical-label: var(--font-size-responsive-sm);     /* Field labels */
+  --font-size-medical-reference: var(--font-size-xs);            /* Reference ranges */
+  --font-size-critical-alert: var(--font-size-responsive-base);  /* Critical alerts */
+  --font-size-patient-name: var(--font-size-responsive-xl);      /* Patient identification */
+
+  /* Component Typography */
+  --font-size-button-sm: var(--font-size-sm);
+  --font-size-button-base: var(--font-size-base);
+  --font-size-button-lg: var(--font-size-lg);
+  
+  --font-size-input: var(--font-size-base);
+  --font-size-label: var(--font-size-sm);
+  --font-size-helper: var(--font-size-xs);
+  --font-size-error: var(--font-size-sm);
+
+  --font-size-card-title: var(--font-size-responsive-lg);
+  --font-size-card-subtitle: var(--font-size-responsive-sm);
+  --font-size-card-body: var(--font-size-responsive-base);
+
+  --font-size-nav-item: var(--font-size-base);
+  --font-size-nav-label: var(--font-size-sm);
+
+  /* Heading Scale */
+  --font-size-h1: var(--font-size-responsive-3xl);
+  --font-size-h2: var(--font-size-responsive-2xl);
+  --font-size-h3: var(--font-size-responsive-xl);
+  --font-size-h4: var(--font-size-responsive-lg);
+  --font-size-h5: var(--font-size-responsive-base);
+  --font-size-h6: var(--font-size-responsive-sm);
+
+  /* Letter Spacing */
+  --letter-spacing-tighter: -0.05em;
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0em;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
+  --letter-spacing-widest: 0.1em;
+
+  /* Medical Data Letter Spacing */
+  --letter-spacing-medical-value: var(--letter-spacing-tight);    /* Tighter for numbers */
+  --letter-spacing-medical-label: var(--letter-spacing-normal);   /* Normal for labels */
+  --letter-spacing-medical-code: var(--letter-spacing-wide);      /* Wider for codes */
+
+  /* Text Decoration */
+  --text-decoration-none: none;
+  --text-decoration-underline: underline;
+  --text-decoration-line-through: line-through;
+
+  /* Text Transform */
+  --text-transform-none: none;
+  --text-transform-uppercase: uppercase;
+  --text-transform-lowercase: lowercase;
+  --text-transform-capitalize: capitalize;
+
+  /* Medical Status Typography Weights */
+  --font-weight-critical: var(--font-weight-bold);       /* Critical values - bold */
+  --font-weight-warning: var(--font-weight-semibold);    /* Warning values - semibold */
+  --font-weight-normal-status: var(--font-weight-medium); /* Normal values - medium */
+  --font-weight-pending: var(--font-weight-normal);      /* Pending values - normal */
+
+  /* Accessibility Typography */
+  --font-size-minimum-touch: 1rem;                       /* 16px minimum for touch targets */
+  --line-height-minimum-accessibility: 1.5;              /* WCAG minimum line height */
+  
+  /* Focus States Typography */
+  --text-decoration-focus: var(--text-decoration-underline);
+  --font-weight-focus: var(--font-weight-semibold);
+
+  /* Print Typography */
+  --font-size-print-body: 12pt;
+  --font-size-print-heading: 14pt;
+  --line-height-print: 1.4;
+}

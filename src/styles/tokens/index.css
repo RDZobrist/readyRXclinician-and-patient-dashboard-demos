@@ -1,0 +1,148 @@
+/* Healthcare Design Tokens - Master Index */
+
+/* Import all token categories */
+@import './colors.css';
+@import './spacing.css';
+@import './typography.css';
+
+/* Additional Design Tokens */
+:root {
+  /* Border Radius */
+  --radius-none: 0;
+  --radius-sm: 0.125rem;     /* 2px */
+  --radius-base: 0.25rem;    /* 4px */
+  --radius-md: 0.375rem;     /* 6px */
+  --radius-lg: 0.5rem;       /* 8px */
+  --radius-xl: 0.75rem;      /* 12px */
+  --radius-2xl: 1rem;        /* 16px */
+  --radius-3xl: 1.5rem;      /* 24px */
+  --radius-full: 9999px;     /* Circular */
+
+  /* Healthcare Component Radius */
+  --radius-button: var(--radius-md);
+  --radius-input: var(--radius-base);
+  --radius-card: var(--radius-lg);
+  --radius-modal: var(--radius-xl);
+  --radius-badge: var(--radius-full);
+  --radius-alert: var(--radius-md);
+
+  /* Border Widths */
+  --border-width-0: 0;
+  --border-width-thin: 1px;
+  --border-width-base: 2px;
+  --border-width-thick: 4px;
+  --border-width-thicker: 8px;
+
+  /* Medical Component Borders */
+  --border-width-input: var(--border-width-thin);
+  --border-width-button: var(--border-width-thin);
+  --border-width-card: var(--border-width-thin);
+  --border-width-critical: var(--border-width-thick);
+  --border-width-focus: var(--border-width-base);
+
+  /* Shadows */
+  --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-base: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --shadow-2xl: 0 50px 100px -20px rgb(0 0 0 / 0.25);
+  --shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+  --shadow-none: 0 0 #0000;
+
+  /* Healthcare Component Shadows */
+  --shadow-card: var(--shadow-sm);
+  --shadow-card-hover: var(--shadow-md);
+  --shadow-modal: var(--shadow-xl);
+  --shadow-dropdown: var(--shadow-lg);
+  --shadow-tooltip: var(--shadow-base);
+  --shadow-critical-alert: var(--shadow-lg);
+  --shadow-focus: 0 0 0 var(--space-focus-ring-width) var(--color-focus-ring);
+
+  /* Transitions */
+  --transition-duration-fast: 150ms;
+  --transition-duration-base: 200ms;
+  --transition-duration-slow: 300ms;
+  --transition-duration-slower: 500ms;
+
+  --transition-timing-ease: ease;
+  --transition-timing-ease-in: ease-in;
+  --transition-timing-ease-out: ease-out;
+  --transition-timing-ease-in-out: ease-in-out;
+  --transition-timing-linear: linear;
+
+  /* Common Transitions */
+  --transition-all: all var(--transition-duration-base) var(--transition-timing-ease-in-out);
+  --transition-colors: color var(--transition-duration-fast) var(--transition-timing-ease-in-out),
+                       background-color var(--transition-duration-fast) var(--transition-timing-ease-in-out),
+                       border-color var(--transition-duration-fast) var(--transition-timing-ease-in-out);
+  --transition-opacity: opacity var(--transition-duration-base) var(--transition-timing-ease-in-out);
+  --transition-transform: transform var(--transition-duration-base) var(--transition-timing-ease-in-out);
+  --transition-shadow: box-shadow var(--transition-duration-base) var(--transition-timing-ease-in-out);
+
+  /* Healthcare Transitions */
+  --transition-button: var(--transition-colors), var(--transition-shadow);
+  --transition-input: var(--transition-colors), border-color var(--transition-duration-fast) var(--transition-timing-ease-in-out);
+  --transition-card: var(--transition-shadow), var(--transition-transform);
+  --transition-modal: var(--transition-opacity), var(--transition-transform);
+
+  /* Z-Index Scale */
+  --z-index-hide: -1;
+  --z-index-auto: auto;
+  --z-index-base: 0;
+  --z-index-docked: 10;
+  --z-index-dropdown: 1000;
+  --z-index-sticky: 1020;
+  --z-index-banner: 1030;
+  --z-index-overlay: 1040;
+  --z-index-modal: 1050;
+  --z-index-popover: 1060;
+  --z-index-skiplink: 1070;
+  --z-index-toast: 1080;
+  --z-index-tooltip: 1090;
+
+  /* Healthcare Component Z-Index */
+  --z-index-sidebar: var(--z-index-docked);
+  --z-index-bottom-tabs: var(--z-index-docked);
+  --z-index-patient-header: var(--z-index-sticky);
+  --z-index-critical-alert: var(--z-index-banner);
+  --z-index-lab-details-modal: var(--z-index-modal);
+  --z-index-chart-tooltip: var(--z-index-tooltip);
+
+  /* Opacity Scale */
+  --opacity-0: 0;
+  --opacity-5: 0.05;
+  --opacity-10: 0.1;
+  --opacity-20: 0.2;
+  --opacity-25: 0.25;
+  --opacity-30: 0.3;
+  --opacity-40: 0.4;
+  --opacity-50: 0.5;
+  --opacity-60: 0.6;
+  --opacity-70: 0.7;
+  --opacity-75: 0.75;
+  --opacity-80: 0.8;
+  --opacity-90: 0.9;
+  --opacity-95: 0.95;
+  --opacity-100: 1;
+
+  /* Healthcare Component Opacity */
+  --opacity-disabled: var(--opacity-50);
+  --opacity-loading: var(--opacity-60);
+  --opacity-overlay: var(--opacity-75);
+  --opacity-backdrop: var(--opacity-80);
+
+  /* Animation Curves */
+  --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  /* Healthcare Animation Curves */
+  --ease-medical-enter: var(--ease-out-cubic);
+  --ease-medical-exit: var(--ease-in-cubic);
+  --ease-medical-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}

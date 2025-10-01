@@ -1,0 +1,259 @@
+:root {
+  /* Breakpoint Values */
+  --breakpoint-xs: 320px;   /* Small phones (iPhone SE) */
+  --breakpoint-sm: 640px;   /* Large phones (iPhone Pro) */
+  --breakpoint-md: 768px;   /* Tablets (iPad Mini) */
+  --breakpoint-lg: 1024px;  /* Small laptops (iPad Pro) */
+  --breakpoint-xl: 1280px;  /* Large laptops */
+  --breakpoint-2xl: 1536px; /* Desktop monitors */
+
+  /* Container Max Widths */
+  --container-xs: 100%;
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1536px;
+
+  /* Healthcare-Specific Breakpoints */
+  --breakpoint-mobile-portrait: 480px;   /* Mobile portrait orientation */
+  --breakpoint-mobile-landscape: 768px;  /* Mobile landscape orientation */
+  --breakpoint-tablet-portrait: 1024px;  /* Tablet portrait orientation */
+  --breakpoint-desktop-small: 1280px;    /* Small desktop/laptop */
+  --breakpoint-desktop-large: 1920px;    /* Large desktop monitors */
+
+  /* Content Width Constraints */
+  --content-width-mobile: calc(100vw - var(--space-page-padding-mobile) * 2);
+  --content-width-tablet: calc(100vw - var(--space-page-padding-tablet) * 2);
+  --content-width-desktop: calc(100vw - var(--space-sidebar-width) - var(--space-page-padding-desktop) * 2);
+  --content-width-max: var(--space-content-max-width);
+}
+
+/* Mobile First Media Queries */
+
+/* Extra Small Devices (320px and up) */
+@media (min-width: 320px) {
+  :root {
+    --current-breakpoint: 'xs';
+    --grid-columns: 1;
+    --card-columns: 1;
+    --navigation-type: 'bottom-tabs';
+  }
+}
+
+/* Small Devices (640px and up) - Large Phones */
+@media (min-width: 640px) {
+  :root {
+    --current-breakpoint: 'sm';
+    --grid-columns: 2;
+    --card-columns: 1;
+    --navigation-type: 'bottom-tabs';
+  }
+}
+
+/* Medium Devices (768px and up) - Tablets */
+@media (min-width: 768px) {
+  :root {
+    --current-breakpoint: 'md';
+    --grid-columns: 2;
+    --card-columns: 2;
+    --navigation-type: 'sidebar';
+  }
+
+  /* Switch to sidebar navigation */
+  .dashboard-layout {
+    grid-template-areas: 
+      "sidebar header"
+      "sidebar main";
+    grid-template-columns: var(--space-sidebar-width) 1fr;
+  }
+
+  /* Hide bottom tabs, show sidebar */
+  .bottom-tabs {
+    display: none;
+  }
+  
+  .sidebar {
+    display: block;
+  }
+}
+
+/* Large Devices (1024px and up) - Small Laptops */
+@media (min-width: 1024px) {
+  :root {
+    --current-breakpoint: 'lg';
+    --grid-columns: 3;
+    --card-columns: 3;
+    --navigation-type: 'sidebar';
+  }
+
+  /* More spacious layout */
+  .dashboard-content {
+    padding: var(--space-section-gap-desktop);
+  }
+}
+
+/* Extra Large Devices (1280px and up) - Large Laptops */
+@media (min-width: 1280px) {
+  :root {
+    --current-breakpoint: 'xl';
+    --grid-columns: 4;
+    --card-columns: 3;
+  }
+
+  /* Constrain max width for readability */
+  .main-content {
+    max-width: var(--content-width-max);
+    margin: 0 auto;
+  }
+}
+
+/* 2X Large Devices (1536px and up) - Desktop Monitors */
+@media (min-width: 1536px) {
+  :root {
+    --current-breakpoint: '2xl';
+    --grid-columns: 4;
+    --card-columns: 4;
+  }
+}
+
+/* Healthcare-Specific Responsive Patterns */
+
+/* Mobile Portrait - Optimize for one-handed use */
+@media (max-width: 480px) and (orientation: portrait) {
+  .lab-results-table {
+    /* Switch to card layout on small screens */
+    display: block;
+  }
+  
+  .lab-result-row {
+    display: block;
+    margin-bottom: var(--space-4);
+    padding: var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+  }
+
+  .patient-header {
+    /* Stack patient info vertically */
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .chart-container {
+    /* Smaller charts on mobile */
+    height: 250px;
+  }
+}
+
+/* Mobile Landscape - Optimize for wider screens */
+@media (max-width: 768px) and (orientation: landscape) {
+  .bottom-tabs {
+    /* Smaller tabs in landscape */
+    height: calc(var(--space-bottom-tabs-height) * 0.8);
+  }
+
+  .chart-container {
+    /* Utilize landscape width */
+    height: 200px;
+  }
+}
+
+/* Tablet Portrait - Hybrid layout */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .dashboard-grid {
+    /* 2-column grid for tablets */
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .lab-results-section {
+    /* Full width for lab results */
+    grid-column: 1 / -1;
+  }
+}
+
+/* Print Styles - Medical Reports */
+@media print {
+  :root {
+    --color-background: white;
+    --color-text-primary: black;
+    --font-size-base: var(--font-size-print-body);
+    --line-height-normal: var(--line-height-print);
+  }
+
+  .sidebar,
+  .bottom-tabs,
+  .navigation {
+    display: none !important;
+  }
+
+  .main-content {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: none !important;
+  }
+
+  .chart-container {
+    /* Ensure charts print well */
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .lab-result-card {
+    /* Avoid breaking cards across pages */
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+/* High DPI / Retina Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Sharper borders and fine details */
+  .border-thin {
+    border-width: 0.5px;
+  }
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Dark Mode Preference */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --default-theme: 'dark';
+  }
+}
+
+/* Light Mode Preference */
+@media (prefers-color-scheme: light) {
+  :root {
+    --default-theme: 'light';
+  }
+}
+
+/* Container Queries for Component-Level Responsiveness */
+@container (max-width: 400px) {
+  .lab-result-card {
+    /* Compact layout for narrow containers */
+    padding: var(--space-3);
+  }
+  
+  .lab-value {
+    font-size: var(--font-size-lg);
+  }
+}
+
+@container (min-width: 600px) {
+  .patient-summary {
+    /* Side-by-side layout in wider containers */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+  }
+}

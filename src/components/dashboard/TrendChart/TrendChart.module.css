@@ -1,0 +1,307 @@
+/**
+ * TrendChart Component Styles
+ * Healthcare-focused chart styling with responsive design
+ */
+
+.trendChart {
+  background: var(--color-surface, #ffffff);
+  border: 1px solid var(--color-border, #d1d5db);
+  border-radius: var(--border-radius-lg, 12px);
+  padding: var(--spacing-lg, 24px);
+  box-shadow: var(--shadow-sm, 0 1px 2px 0 rgba(0, 0, 0, 0.05));
+  transition: box-shadow 0.2s ease;
+}
+
+.trendChart:hover {
+  box-shadow: var(--shadow-md, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+}
+
+/* Chart Header */
+.chartHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-lg, 24px);
+  padding-bottom: var(--spacing-md, 16px);
+  border-bottom: 1px solid var(--color-border-light, #e5e7eb);
+}
+
+.chartTitle {
+  font-size: var(--font-size-lg, 1.125rem);
+  font-weight: var(--font-weight-semibold, 600);
+  color: var(--color-text-primary, #111827);
+  margin: 0;
+  letter-spacing: -0.025em;
+}
+
+.trendIndicator {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs, 8px);
+  padding: var(--spacing-xs, 8px) var(--spacing-sm, 12px);
+  background: var(--color-surface-secondary, #f9fafb);
+  border-radius: var(--border-radius-md, 8px);
+  border: 1px solid var(--color-border-light, #e5e7eb);
+}
+
+.trendDirection {
+  font-size: var(--font-size-lg, 1.125rem);
+  font-weight: var(--font-weight-bold, 700);
+  line-height: 1;
+}
+
+.trendDirection.increasing {
+  color: var(--color-critical, #dc2626);
+}
+
+.trendDirection.decreasing {
+  color: var(--color-normal, #059669);
+}
+
+.trendDirection.stable {
+  color: var(--color-text-secondary, #6b7280);
+}
+
+.trendLabel {
+  font-size: var(--font-size-sm, 0.875rem);
+  font-weight: var(--font-weight-medium, 500);
+  color: var(--color-text-secondary, #6b7280);
+  text-transform: capitalize;
+}
+
+/* Chart Container */
+.chartContainer {
+  position: relative;
+  width: 100%;
+  margin-bottom: var(--spacing-md, 16px);
+
+}
+
+/* Custom Tooltip */
+.tooltip {
+  background: var(--color-surface, #ffffff);
+  border: 1px solid var(--color-border, #d1d5db);
+  border-radius: var(--border-radius-md, 8px);
+  padding: var(--spacing-sm, 12px);
+  box-shadow: var(--shadow-lg, 0 10px 15px -3px rgba(0, 0, 0, 0.1));
+  font-size: var(--font-size-sm, 0.875rem);
+  max-width: 200px;
+}
+
+.tooltipLabel {
+  font-weight: var(--font-weight-semibold, 600);
+  color: var(--color-text-primary, #111827);
+  margin: 0 0 var(--spacing-xs, 8px) 0;
+}
+
+.tooltipValue {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs, 8px);
+  margin: 0 0 var(--spacing-xs, 8px) 0;
+  font-weight: var(--font-weight-medium, 500);
+  color: var(--color-text-primary, #111827);
+}
+
+.tooltipIndicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.tooltipStatus {
+  margin: 0 0 var(--spacing-xs, 8px) 0;
+  color: var(--color-text-secondary, #6b7280);
+}
+
+.tooltipReference {
+  margin: 0;
+  color: var(--color-text-secondary, #6b7280);
+  font-size: var(--font-size-xs, 0.75rem);
+}
+
+.status {
+  font-weight: var(--font-weight-medium, 500);
+  text-transform: capitalize;
+}
+
+.status.critical,
+.status.high,
+.status.low {
+  color: var(--color-critical, #dc2626);
+}
+
+.status.warning,
+.status.abnormal,
+.status.elevated {
+  color: var(--color-warning, #d97706);
+}
+
+.status.normal {
+  color: var(--color-normal, #059669);
+}
+
+/* Chart Footer */
+.chartFooter {
+  display: flex;
+  justify-content: center;
+  padding-top: var(--spacing-sm, 12px);
+  border-top: 1px solid var(--color-border-light, #e5e7eb);
+  padding-bottom: var(--spacing-sm, 12px);
+}
+
+.dateRange {
+  font-size: var(--font-size-xs, 0.5rem);
+  padding: var(--spacing-xs, 3.75rem);
+  color: var(--color-text-secondary, #6b7280);
+  font-weight: var(--font-weight-medium, 500);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .trendChart {
+    padding: var(--spacing-md, 16px);
+    margin: 0 var(--spacing-sm, 12px);
+  }
+
+  .chartHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm, 12px);
+  }
+
+  .chartTitle {
+    font-size: var(--font-size-base, 1rem);
+  }
+
+  .trendIndicator {
+    align-self: flex-end;
+  }
+
+  .tooltip {
+    font-size: var(--font-size-xs, 0.75rem);
+    padding: var(--spacing-xs, 8px);
+    max-width: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .trendChart {
+    padding: var(--spacing-sm, 12px);
+    margin: 0 var(--spacing-xs, 8px);
+    border-radius: var(--border-radius-md, 8px);
+  }
+
+  .chartHeader {
+    margin-bottom: var(--spacing-md, 16px);
+    padding-bottom: var(--spacing-sm, 12px);
+  }
+
+  .chartTitle {
+    font-size: var(--font-size-sm, 0.875rem);
+  }
+
+  .trendDirection {
+    font-size: var(--font-size-base, 1rem);
+  }
+
+  .trendLabel {
+    font-size: var(--font-size-xs, 0.75rem);
+  }
+}
+
+/* Dark Theme Support */
+@media (prefers-color-scheme: dark) {
+  .trendChart {
+    background: var(--color-surface-dark, #1f2937);
+    border-color: var(--color-border-dark, #374151);
+  }
+
+  .chartTitle {
+    color: var(--color-text-primary-dark, #f9fafb);
+  }
+
+  .trendIndicator {
+    background: var(--color-surface-secondary-dark, #374151);
+    border-color: var(--color-border-dark, #4b5563);
+  }
+
+  .trendLabel {
+    color: var(--color-text-secondary-dark, #d1d5db);
+  }
+
+  .tooltip {
+    background: var(--color-surface-dark, #1f2937);
+    border-color: var(--color-border-dark, #374151);
+  }
+
+  .tooltipLabel {
+    color: var(--color-text-primary-dark, #f9fafb);
+  }
+
+  .tooltipValue {
+    color: var(--color-text-primary-dark, #f9fafb);
+  }
+
+  .tooltipStatus,
+  .tooltipReference {
+    color: var(--color-text-secondary-dark, #d1d5db);
+  }
+
+  .dateRange {
+    color: var(--color-text-secondary-dark, #d1d5db);
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .trendChart {
+    border-width: 2px;
+  }
+
+  .chartHeader {
+    border-bottom-width: 2px;
+  }
+
+  .chartFooter {
+    border-top-width: 2px;
+  }
+
+  .trendIndicator {
+    border-width: 2px;
+  }
+}
+.noData {
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .noDataMessage {
+    text-align: center;
+    padding: var(--spacing-xl, 2rem);
+    color: var(--color-text-secondary, #6b7280);
+  }
+  
+  .noDataMessage p {
+    margin: 0 0 var(--spacing-sm, 0.5rem) 0;
+    font-size: var(--font-size-base, 1rem);
+    font-weight: var(--font-weight-medium, 500);
+  }
+  
+  .noDataSubtext {
+    font-size: var(--font-size-sm, 0.875rem) !important;
+    font-weight: var(--font-weight-normal, 400) !important;
+    color: var(--color-text-tertiary, #9ca3af) !important;
+    font-style: italic;
+  }
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .trendChart {
+    transition: none;
+  }
+}

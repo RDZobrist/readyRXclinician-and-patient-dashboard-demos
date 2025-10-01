@@ -1,0 +1,101 @@
+/* Healthcare Color System - ADA/WCAG AA Compliant */
+:root {
+  /* Base Neutral Colors */
+  --color-white: #ffffff;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  --color-black: #000000;
+
+  /* Medical Status Colors - High Contrast for Safety */
+  --color-critical: #dc2626;        /* Red - Critical/Dangerous values */
+  --color-critical-light: #fef2f2;  /* Light red background */
+  --color-critical-dark: #991b1b;   /* Dark red for text */
+  
+  --color-warning: #d97706;         /* Orange - Abnormal values */
+  --color-warning-light: #fffbeb;   /* Light orange background */
+  --color-warning-dark: #92400e;    /* Dark orange for text */
+  
+  --color-normal: #059669;          /* Green - Normal values */
+  --color-normal-light: #ecfdf5;    /* Light green background */
+  --color-normal-dark: #047857;     /* Dark green for text */
+  
+  --color-pending: #6b7280;         /* Gray - Pending/Unknown */
+  --color-pending-light: #f9fafb;   /* Light gray background */
+  --color-pending-dark: #374151;    /* Dark gray for text */
+
+  /* User Role Colors */
+  --color-clinician: #3b82f6;       /* Blue - Clinical actions */
+  --color-clinician-light: #eff6ff; /* Light blue background */
+  --color-clinician-dark: #1d4ed8;  /* Dark blue for text */
+  
+  --color-admin: #8b5cf6;           /* Purple - Admin functions */
+  --color-admin-light: #f5f3ff;     /* Light purple background */
+  --color-admin-dark: #7c3aed;      /* Dark purple for text */
+  
+  --color-patient: #10b981;         /* Teal - Patient-facing */
+  --color-patient-light: #ecfdf5;   /* Light teal background */
+  --color-patient-dark: #047857;    /* Dark teal for text */
+
+  /* Interactive Colors */
+  --color-primary: var(--color-clinician);
+  --color-primary-light: var(--color-clinician-light);
+  --color-primary-dark: var(--color-clinician-dark);
+  
+  --color-secondary: var(--color-gray-600);
+  --color-secondary-light: var(--color-gray-100);
+  --color-secondary-dark: var(--color-gray-800);
+
+  /* Semantic Colors */
+  --color-success: var(--color-normal);
+  --color-success-light: var(--color-normal-light);
+  --color-success-dark: var(--color-normal-dark);
+  
+  --color-error: var(--color-critical);
+  --color-error-light: var(--color-critical-light);
+  --color-error-dark: var(--color-critical-dark);
+  
+  --color-info: var(--color-clinician);
+  --color-info-light: var(--color-clinician-light);
+  --color-info-dark: var(--color-clinician-dark);
+
+  /* Surface Colors */
+  --color-background: var(--color-white);
+  --color-surface: var(--color-gray-50);
+  --color-surface-elevated: var(--color-white);
+  --color-border: var(--color-gray-200);
+  --color-border-light: var(--color-gray-100);
+  --color-border-dark: var(--color-gray-300);
+
+  /* Text Colors */
+  --color-text-primary: var(--color-gray-900);
+  --color-text-secondary: var(--color-gray-600);
+  --color-text-muted: var(--color-gray-500);
+  --color-text-inverse: var(--color-white);
+
+  /* Interactive States */
+  --color-hover-overlay: rgba(0, 0, 0, 0.05);
+  --color-active-overlay: rgba(0, 0, 0, 0.1);
+  --color-focus-ring: var(--color-primary);
+  --color-disabled: var(--color-gray-300);
+  --color-disabled-text: var(--color-gray-400);
+
+  /* Chart Colors - Accessible and Distinguishable */
+  --color-chart-primary: var(--color-clinician);
+  --color-chart-secondary: var(--color-admin);
+  --color-chart-tertiary: var(--color-patient);
+  --color-chart-quaternary: var(--color-warning);
+  --color-chart-quinary: var(--color-normal);
+  
+  /* Chart Background */
+  --color-chart-background: var(--color-white);
+  --color-chart-grid: var(--color-gray-200);
+  --color-chart-axis: var(--color-gray-400);
+}

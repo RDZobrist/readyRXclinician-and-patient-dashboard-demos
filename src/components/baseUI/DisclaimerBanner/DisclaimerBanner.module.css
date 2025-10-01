@@ -1,0 +1,176 @@
+/* DisclaimerBanner Component Styles */
+.banner {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid;
+  padding: 12px;
+  margin-bottom: 16px;
+  font-family: system-ui, -apple-system, sans-serif;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.iconContainer {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.messageContainer {
+  flex: 1;
+  min-width: 0;
+  padding: 5px;
+}
+
+.message {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 200;
+}
+
+.dismissButton {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.dismissButton:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.dismissButton:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.dismissIcon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Severity Variants */
+.info {
+  background-color: #eff6ff;
+  border-color: #bfdbfe;
+  color: #1e40af;
+}
+
+.info .icon {
+  color: #2563eb;
+}
+
+.info .dismissButton:hover {
+  background-color: #dbeafe;
+}
+
+.warning {
+  background-color: #fffbeb;
+  border-color: #fde68a;
+  color: #92400e;
+}
+
+.warning .icon {
+  color: #d97706;
+}
+
+.warning .dismissButton:hover {
+  background-color: #fef3c7;
+}
+
+.critical {
+  background-color: #fef2f2;
+  border-color: #fecaca;
+  color: #991b1b;
+}
+
+.critical .icon {
+  color: #dc2626;
+}
+
+.critical .dismissButton:hover {
+  background-color: #fee2e2;
+}
+
+/* Dark Theme Support */
+@media (prefers-color-scheme: dark) {
+  .info {
+    background-color: #1e3a8a;
+    border-color: #1d4ed8;
+    color: #bfdbfe;
+  }
+
+  .info .icon {
+    color: #60a5fa;
+  }
+
+  .warning {
+    background-color: #92400e;
+    border-color: #d97706;
+    color: #fde68a;
+  }
+
+  .warning .icon {
+    color: #fbbf24;
+  }
+
+  .critical {
+    background-color: #991b1b;
+    border-color: #dc2626;
+    color: #fecaca;
+  }
+
+  .critical .icon {
+    color: #f87171;
+  }
+
+  .dismissButton:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .banner {
+    padding: 10px;
+    margin-bottom: 12px;
+  }
+
+  .content {
+    gap: 8px;
+  }
+
+  .message {
+    font-size: 13px;
+  }
+
+  .icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .dismissIcon {
+    width: 14px;
+    height: 14px;
+  }
+}
