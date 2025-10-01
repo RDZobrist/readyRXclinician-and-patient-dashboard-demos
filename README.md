@@ -9,7 +9,7 @@
 
 A comprehensive healthcare dashboard showcasing patient lab results, trend analysis, and medical data visualization. Built as a component library with healthcare-focused UX, accessibility compliance, and responsive design.
 
-## 🏥 Features
+## Features
 
 ### Core Dashboard Functionality
 - **Patient Management**: Multi-patient selection with role-based access (Clinician/Patient views)
@@ -30,21 +30,21 @@ A comprehensive healthcare dashboard showcasing patient lab results, trend analy
 - **Storybook**: Complete component documentation and testing
 - **Healthcare UX**: Medical workflow optimization and patient safety considerations
 
-## 🚀 Quick Start
+## Quick Start Guide
 
 ### Prerequisites
 
 - **Node.js**: Version 18.0 or higher
 - **npm**: Version 8.0 or higher (or yarn/pnpm equivalent)
 
-### Installation
+### Installation Guide
 
-### Installation
 
 #### 1. **Clone the repository**
 ```bash
-git clone <repository-url>
-cd ready-rx-dashboard
+
+git clone https://github.com/RDZobrist/readyRXclinician-and-patient-dashboard-demos.git
+cd readyRXclinician-and-patient-dashboard-demos
 ```
 # Install all project dependencies
 npm install
