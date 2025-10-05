@@ -63,5 +63,10 @@ export const medicalDefinitions: Record<string, { title: string; definition: str
       title: 'BMI (Body Mass Index)',
       definition: 'A measure of body fat based on height and weight. Used to assess if you are underweight, normal weight, overweight, or obese.',
       normalRange: 'Normal: 18.5-24.9 kg/m²'
+    },
+    weight: {
+      title: 'Body Weight',
+      definition: 'The measurement of body mass, an important indicator of overall health. Changes in weight can signal underlying health issues.',
+      normalRange: 'Varies based on height, age, and sex. Often assessed using BMI.'
     }
   };
