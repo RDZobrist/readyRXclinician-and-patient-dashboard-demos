@@ -83,7 +83,6 @@ export const TrendChart: React.FC<TrendChartProps> = ({
 
   const data = getTrendData();
 
-  // Show message if no trend data available for patient
   if (!data) {
     return (
       <div
@@ -103,7 +102,7 @@ export const TrendChart: React.FC<TrendChartProps> = ({
     );
   }
 
-  // Transform trend data for Recharts
+  // transform trend data for Recharts
   const chartData = data.dataPoints.map((point) => ({
     date: format(new Date(point.date), "MMM dd"),
     fullDate: point.date,

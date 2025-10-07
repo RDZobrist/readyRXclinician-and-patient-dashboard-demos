@@ -37,13 +37,10 @@ export interface LabResult {
 }
 
 export interface LabResultCardProps {
-  /** Lab result data to display */
   result: LabResult;
   /** Visual variant of the card */
   variant?: 'mobile' | 'desktop' | 'compact';
-  /** Whether this card is currently active/selected */
   isActive?: boolean;
-  /** Optional click handler */
   onClick?: (result: LabResult) => void;
   /** Additional CSS classes */
   className?: string;
@@ -51,9 +48,10 @@ export interface LabResultCardProps {
   testId?: string;
 }
 
+
 export const LabResultCard: React.FC<LabResultCardProps> = ({
   result,
-  variant = 'mobile',
+  variant = "desktop",
   isActive = false,
   onClick,
   className,
@@ -63,6 +61,7 @@ export const LabResultCard: React.FC<LabResultCardProps> = ({
     if (onClick) {
       onClick(result);
     }
+    return;
   };
 
   const cardClasses = [
@@ -72,6 +71,8 @@ export const LabResultCard: React.FC<LabResultCardProps> = ({
     onClick && styles.clickable,
     className
   ].filter(Boolean).join(' ');
+  
+  const labResultDate: string = result.date && new Date(result.date).toLocaleDateString();
 
   return (
     <div 
@@ -80,7 +81,8 @@ export const LabResultCard: React.FC<LabResultCardProps> = ({
       data-testid={testId}
       role={onClick ? 'button' : undefined}
       tabIndex={onClick ? 0 : undefined}
-      onKeyDown={onClick ? (e) => {
+      aria-pressed={isActive}
+      onKeyDown={onClick ? (e: React.KeyboardEvent<HTMLDivElement>) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
           handleClick();
@@ -106,7 +108,7 @@ export const LabResultCard: React.FC<LabResultCardProps> = ({
           
           <div className={styles.testDate}>
             <label>Date:</label>
-            <span>{new Date(result.date).toLocaleDateString()}</span>
+            <span>{labResultDate}</span>
           </div>
         </div>
       </div>

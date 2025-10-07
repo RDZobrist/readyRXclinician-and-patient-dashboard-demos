@@ -34,7 +34,7 @@ export const DashboardContent: React.FC<DashboardContentProps> = ({
 
   // Header actions - includes ViewSelector and Patient Selector (clinician only)
   const headerActions = (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}> 
       {/* Patient Selector - Clinician View Only */}
       {!isPatientView && (
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -116,7 +116,8 @@ export const DashboardContent: React.FC<DashboardContentProps> = ({
             testId="patient-trend-chart"
           />
         </div>
-        <HealthSuggestionsCard />
+        {isPatientView && <HealthSuggestionsCard /> }
+        
       </div>
     </DashboardLayout>
   );
